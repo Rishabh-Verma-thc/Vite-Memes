@@ -11,7 +11,7 @@ A fun and interactive React app that lets you generate random meme images, add c
 - 📱 Clean, responsive UI with a fun animated vibe
 
 ## 🌐 Live Demo
-Check out the live version [here.](vite-memes.netlify.app)
+Check out the live version [here.](https://vite-memes-byrv.netlify.app/)
 
 ![vite-memes-screenshot-1](public/images/proj-ss-1.png)
 
