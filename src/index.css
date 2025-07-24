@@ -1,0 +1,320 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+}
+
+.app-container {
+    max-width: 700px;
+    margin: 30px auto 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background: linear-gradient(90deg, #D53369 0%, #DAAE51 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header > a {
+    padding: 0;
+    margin: 0;
+}
+
+.header > a > img {
+    position: absolute;
+    left: 12px;
+    top: 2px;
+    height: 90%;
+}
+
+.header h1 {
+    margin-left: 60px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+main {
+    margin: auto;
+    padding: 36px 36px 20px;
+    max-width: 650px;
+}
+
+.form {
+    display: grid;
+    grid-template: auto auto / 1fr 1fr;
+    gap: 17px;
+    margin-bottom: 7px;
+}
+
+.form label {
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.form input {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    border: 1px solid #D5D4D8;
+    text-indent: 9px;
+}
+
+.form button {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    color: black;
+}
+
+.form input, .form button, .downloadBtn, .uploadBtn {
+    min-height: 40px;
+    font-family: "Karla", sans-serif;
+}
+
+.meme {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meme img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.meme span {
+    position: absolute;
+    text-align: center;
+    margin-block: 15px;
+    padding-inline: 5px;
+    font-family: impact, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+}
+
+.downloadBtn {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    color: white;
+}
+
+.uploadBtn {
+    width: 100%;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #8A2BE2 0%, #FF69B4 100%);
+    color: white;
+}
+
+.form button,
+.downloadBtn,
+.uploadBtn {
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.15);
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 6px 0;
+    background: linear-gradient(to left, #ffecd2, #fcb69f);
+    font-size: 0.85rem;
+}
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* background css */
+.bg-scroller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+    pointer-events: none;
+}
+
+.bg-row {
+    display: flex;
+    width: max-content;
+    animation: scrollRow 120s linear infinite;
+    filter: blur(5px);
+    opacity: 0.6;
+}
+
+.bg-row:nth-child(even) {
+    animation-direction: reverse;
+}
+
+.bg-row img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes scrollRow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* draggable text */
+.draggable-text {
+    width: 200px;
+    text-align: center;
+    white-space: normal;
+    pointer-events: auto;
+
+    cursor: grab;
+    user-select: none;
+}
+
+.draggable-text:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 1.25rem;
+        margin-left: 60px;
+    }
+
+    .form label {
+        font-size: 1.1rem;
+    }
+
+    .meme span {
+        font-size: 1.4rem;
+    }
+
+    .app-container {
+        margin: 15px;
+        border-radius: 16px;
+    }
+
+    .header {
+        height: auto;
+        flex-direction: row;
+        padding: 16px;
+    }
+
+    .header img {
+        height: 50px;
+        position: static;
+        margin-right: 12px;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    .downloadBtn,
+    .uploadBtn,
+    .form button {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .bg-row img {
+        width: 120px;
+        height: 80px;
+    }
+
+    .draggable-text {
+        width: 42%;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-scroller {
+        gap: 1vh;
+        padding: 1vh 0;
+    }
+
+    .bg-row img {
+        margin-right: 6px;
+        border-radius: 6px;
+    }
+}
